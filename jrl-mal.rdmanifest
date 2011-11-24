@@ -9,6 +9,7 @@ install-script: |
   make
   echo "About to run checkinstall make install"
   sudo checkinstall -y --nodoc --pkgname=jrl-mal-sourcedep --pkgversion=1.19.3 make install
+  sudo chown -R a+rw ..
 check-presence-script: |
   #!/bin/bash
   if test x`dpkg-query -W -f='${Package} ${Status} ${Version}\n' jrl-mal-sourcedep` != 'xjrl-mal-sourcedep installed 1.19.3'; then

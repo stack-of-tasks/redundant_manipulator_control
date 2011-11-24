@@ -9,7 +9,7 @@ install-script: |
   make
   echo "About to run checkinstall make install"
   sudo checkinstall -y --nodoc --pkgname=jrl-mathtools-sourcedep --pkgversion=1.5 make install
-  sudo chown -R a+rw .
+  sudo chown -R a+rw ..
 check-presence-script: |
   #!/bin/bash
   if test x`dpkg-query -W -f='${Package} ${Status} ${Version}\n' jrl-mathtools-sourcedep` != 'xjrl-mathtools-sourcedep installed 1.5'; then
