@@ -13,7 +13,7 @@ install-script: |
   sudo rm -rf build
 check-presence-script: |
   #!/bin/bash
-  if test "x`dpkg-query -W -f='${Package} ${Status} ${Version}\n' jrl-dynamics-sourcedep`" != 'xjrl-dynamics-sourcedep install ok installed 1.19.4'; then
+  if test "x`dpkg-query -W -f='${Package} ${Status} ${Version}\n' jrl-dynamics-sourcedep`" != 'xjrl-dynamics-sourcedep install ok installed 1.19.4-1'; then
     echo "jrl-dynamics-sourcedep not installed"
     exit 1
   else
