@@ -7,3 +7,6 @@
 [submodule "jrl_dynamics_urdf"]
 	path = jrl_dynamics_urdf
 	url = git@github.com:laas/jrl_dynamics_urdf.git
+[submodule "roboptim_smoother"]
+	path = roboptim_smoother
+	url = git://github.com/laas/roboptim_smoother.git
