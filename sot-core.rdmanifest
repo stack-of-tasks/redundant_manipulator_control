@@ -1,0 +1,23 @@
+uri: 'ftp://ftp.openrobots.org/pub/openrobots/sot-core/sot-core-2.5.tar.gz'
+md5sum: cd4fda142b35101f6c5ed4b05e6b1a87
+install-script: |
+  #!/bin/bash
+  set -o errexit
+  mkdir -p build
+  cd build
+  cmake -DCMAKE_BUILD_TYPE=RelWithDebInfo ..
+  make
+  echo "About to run checkinstall make install"
+  sudo checkinstall -y --nodoc --pkgname=sot-core-sourcedep --pkgversion=2.5 make install
+  cd ..
+  sudo rm -rf build
+check-presence-script: |
+  #!/bin/bash
+  if test "x`dpkg-query -W -f='${Package} ${Status} ${Version}\n' sot-core-sourcedep`" != 'xsot-core-sourcedep install ok installed 2.5-1'; then
+    echo "sot-core-sourcedep not installed"
+    exit 1
+  else
+    exit 0
+  fi
+exec-path: sot-core-2.5
+depends: [checkinstall, boost, cmake, doxygen, jrl-mal]
