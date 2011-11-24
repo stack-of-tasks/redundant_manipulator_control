@@ -1,0 +1,21 @@
+uri: 'ftp://ftp.openrobots.org/pub/openrobots/jrl-mal/jrl-mal-1.19.3.tar.gz'
+md5sum: a76e7cc01140a48a30c4e044639e9b10
+install-script: |
+  #!/bin/bash
+  set -o errexit
+  mkdir -p build
+  cd build
+  cmake ..
+  make
+  echo "About to run checkinstall make install"
+  sudo checkinstall -y --nodoc --pkgname=jrl-mal-sourcedep make install
+check-presence-script: |
+  #!/bin/bash
+  dpkg-query -W -f='${Package} ${Status}\n' jrl-mal-sourcedep | awk '{\
+  if ($4 =="installed")
+    exit 0
+  else
+    print "jrl-mal-sourcedep not installed"
+    exit 1}'
+exec-path: jrl-mal-1.19.3
+depends: [checkinstall boost]

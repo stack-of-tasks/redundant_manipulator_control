@@ -1,0 +1,21 @@
+uri: 'ftp://ftp.openrobots.org/pub/openrobots/abstract-robot-dynamics/abstract-robot-dynamics-1.16.3.tar.gz'
+md5sum: 65c982c9bff33381ba41c5398e74caee
+install-script: |
+  #!/bin/bash
+  set -o errexit
+  mkdir -p build
+  cd build
+  cmake ..
+  make
+  echo "About to run checkinstall make install"
+  sudo checkinstall -y --nodoc --pkgname=abstract-robot-dynamics-sourcedep make install
+check-presence-script: |
+  #!/bin/bash
+  dpkg-query -W -f='${Package} ${Status}\n' abstract-robot-dynamics-sourcedep | awk '{\
+  if ($4 =="installed")
+    exit 0
+  else
+    print "abstract-robot-dynamics-sourcedep not installed"
+    exit 1}'
+exec-path: abstract-robot-dynamics-1.16.3
+depends: [checkinstall boost lapack cmake doxygen jrl-mal jrl-mathtools]

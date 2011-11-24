@@ -1,0 +1,21 @@
+uri: 'ftp://ftp.openrobots.org/pub/openrobots/jrl-dynamics/jrl-dynamics-1.19.4.tar.gz'
+md5sum: 65c982c9bff33381ba41c5398e74caee
+install-script: |
+  #!/bin/bash
+  set -o errexit
+  mkdir -p build
+  cd build
+  cmake ..
+  make
+  echo "About to run checkinstall make install"
+  sudo checkinstall -y --nodoc --pkgname=jrl-dynamics-sourcedep make install
+check-presence-script: |
+  #!/bin/bash
+  dpkg-query -W -f='${Package} ${Status}\n' jrl-dynamics-sourcedep | awk '{\
+  if ($4 =="installed")
+    exit 0
+  else
+    print "jrl-dynamics-sourcedep not installed"
+    exit 1}'
+exec-path: jrl-dynamics-1.19.4
+depends: [checkinstall boost lapack cmake doxygen]
