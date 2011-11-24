@@ -1,0 +1,12 @@
+<stack>
+  <description brief="Real-time control framework for redundant manipulators.">
+
+    Real-time control framework for redundant manipulators.
+
+  </description>
+  <author>Maintained by Thomas Moulard</author>
+  <license>LGPL</license>  
+  <review status="experimental" notes=""/>
+  <url>http://ros.org/wiki/redundant_manipulator_control</url>
+  <depend stack="ros" />
+</stack>

@@ -1,0 +1,6 @@
+[submodule "dynamic_graph_bridge"]
+	path = dynamic_graph_bridge
+	url = git://github.com/jrl-umi3218/dynamic_graph_bridge.git
+[submodule "sot_pr2"]
+	path = sot_pr2
+	url = git://github.com/laas/sot_pr2.git
