@@ -3,7 +3,7 @@ md5sum: 967398f2fac682e1460598efa6d28f28
 install-script: |
   #!/bin/bash
   set -o errexit
-  export LD_LIBRARY_PATH=/usr/local/lib/pkgconfig
+  export LD_LIBRARY_PATH=/usr/local/lib/pkgconfig:/usr/lib/pkgconfig
   mkdir -p build
   cd build
   cmake -DCMAKE_BUILD_TYPE=RelWithDebInfo ..

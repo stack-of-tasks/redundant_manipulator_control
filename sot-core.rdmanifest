@@ -3,7 +3,7 @@ md5sum: 851f8c0b5f161e395bfae15b295d6e69
 install-script: |
   #!/bin/bash
   set -o errexit
-  export LD_LIBRARY_PATH=/usr/local/lib/pkgconfig
+  export LD_LIBRARY_PATH=/usr/local/lib/pkgconfig:/usr/lib/pkgconfig
   mkdir -p build
   cd build
   cmake -DCMAKE_BUILD_TYPE=RelWithDebInfo ..
@@ -21,4 +21,4 @@ check-presence-script: |
     exit 0
   fi
 exec-path: sot-core-2.5
-depends: [checkinstall, boost, cmake, doxygen, jrl-mal]
+depends: [checkinstall, boost, cmake, doxygen, jrl-mal, dynamic-graph-python]
