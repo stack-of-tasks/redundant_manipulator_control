@@ -21,4 +21,4 @@ check-presence-script: |
     exit 0
   fi
 exec-path: dynamic-graph-python-2.5
-depends: [checkinstall, boost, cmake, doxygen, jrl-mal]
+depends: [checkinstall, boost, cmake, doxygen, python-sphinx, jrl-mal]
