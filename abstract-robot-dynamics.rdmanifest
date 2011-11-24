@@ -5,10 +5,12 @@ install-script: |
   set -o errexit
   mkdir -p build
   cd build
-  cmake ..
+  cmake -DCMAKE_BUILD_TYPE=RelWithDebInfo ..
   make
   echo "About to run checkinstall make install"
   sudo checkinstall -y --nodoc --pkgname=abstract-robot-dynamics-sourcedep make install
+  cd ..
+  sudo rm -rf build
 check-presence-script: |
   #!/bin/bash
   if test x`dpkg-query -W -f='${Package} ${Status} ${Version}\n' abstract-robot-dynamics-sourcedep` != 'xabstract-robot-dynamics-sourcedep installed 1.16.3'; then
