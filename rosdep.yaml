@@ -4,6 +4,10 @@ cmake:
   fedora: cmake
   macports: cmake
 
+omniORB4:
+  ubuntu: omniorb4 omniorb4-idl libomniorb4-dev
+
+
 ######################
 # Mathematical tools #
 ######################
