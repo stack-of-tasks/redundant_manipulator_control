@@ -3,6 +3,7 @@ md5sum: a76e7cc01140a48a30c4e044639e9b10
 install-script: |
   #!/bin/bash
   set -o errexit
+  export LD_LIBRARY_PATH=/usr/local/lib/pkgconfig
   mkdir -p build
   cd build
   cmake -DCMAKE_BUILD_TYPE=RelWithDebInfo -DSMALLMATRIX=jrl-mathtools ..
