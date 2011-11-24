@@ -11,11 +11,11 @@ install-script: |
   sudo checkinstall -y --nodoc --pkgname=jrl-dynamics-sourcedep make install
 check-presence-script: |
   #!/bin/bash
-  dpkg-query -W -f='${Package} ${Status}\n' jrl-dynamics-sourcedep | awk '{\
-  if ($4 =="installed")
-    exit 0
+  if test x`dpkg-query -W -f='${Package} ${Status} ${Version}\n' jrl-dynamics-sourcedep` != 'xjrl-dynamics-sourcedep installed 1.19.4'; then
+    echo "jrl-dynamics-sourcedep not installed"
+    exit 1
   else
-    print "jrl-dynamics-sourcedep not installed"
-    exit 1}'
+    exit 0
+  fi
 exec-path: jrl-dynamics-1.19.4
 depends: [checkinstall boost lapack cmake doxygen]
