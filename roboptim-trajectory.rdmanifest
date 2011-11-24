@@ -1,0 +1,24 @@
+uri: 'https://github.com/downloads/laas/roboptim-trajectory/roboptim-trajectory-0.6.tar.gz'
+md5sum: a43d6b260b7371bec191c87c50d6b42d
+install-script: |
+  #!/bin/bash
+  set -o errexit
+  export LD_LIBRARY_PATH=/usr/local/lib/pkgconfig:/usr/lib/pkgconfig
+  mkdir -p build
+  cd build
+  cmake -DCMAKE_BUILD_TYPE=RelWithDebInfo ..
+  make
+  echo "About to run checkinstall make install"
+  sudo checkinstall -y --nodoc --pkgname=roboptim-trajectory-sourcedep --pkgversion=0.6 make install
+  cd ..
+  sudo rm -rf build
+check-presence-script: |
+  #!/bin/bash
+  if test "x`dpkg-query -W -f='${Package} ${Status} ${Version}\n' roboptim-trajectory-sourcedep`" != 'xroboptim-trajectory-sourcedep install ok installed 0.6-1'; then
+    echo "roboptim-trajectory-sourcedep not installed"
+    exit 1
+  else
+    exit 0
+  fi
+exec-path: roboptim-trajectory-0.6
+depends: [checkinstall, boost, cmake, doxygen, roboptim-core]

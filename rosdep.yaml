@@ -7,6 +7,27 @@ cmake:
 omniORB4:
   ubuntu: omniorb4 omniorb4-idl libomniorb4-dev
 
+ipopt:
+  ubuntu: coinor-libipopt-dev
+
+############
+# RobOptim #
+############
+roboptim-core:
+  ubuntu:
+    source:
+      uri: 'https://raw.github.com/laas/redundant_manipulator_control/master/roboptim-core.rdmanifest'
+
+roboptim-core-plugin-ipopt:
+  ubuntu:
+    source:
+      uri: 'https://raw.github.com/laas/redundant_manipulator_control/master/roboptim-core-plugin-ipopt.rdmanifest'
+
+roboptim-trajectory:
+  ubuntu:
+    source:
+      uri: 'https://raw.github.com/laas/redundant_manipulator_control/master/roboptim-trajectory.rdmanifest'
+
 
 ######################
 # Mathematical tools #
@@ -68,3 +89,5 @@ sot-dynamic:
   ubuntu:
     source:
       uri: 'https://raw.github.com/laas/redundant_manipulator_control/master/sot-dynamic.rdmanifest'
+
+#FIXME: sot-motion-planner not yet released.
