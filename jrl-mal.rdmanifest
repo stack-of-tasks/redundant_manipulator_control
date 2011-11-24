@@ -13,7 +13,7 @@ install-script: |
   sudo rm -rf build
 check-presence-script: |
   #!/bin/bash
-  if test "x`dpkg-query -W -f='${Package} ${Status} ${Version}\n' jrl-mal-sourcedep`" != 'xjrl-mal-sourcedep installed 1.19.3'; then
+  if test "x`dpkg-query -W -f='${Package} ${Status} ${Version}\n' jrl-mal-sourcedep`" != 'xjrl-mal-sourcedep install ok installed 1.19.3'; then
     echo "jrl-mal-sourcedep not installed"
     exit 1
   else

@@ -13,7 +13,7 @@ install-script: |
   sudo rm -rf build
 check-presence-script: |
   #!/bin/bash
-  if test "x`dpkg-query -W -f='${Package} ${Status} ${Version}\n' jrl-mathtools-sourcedep`" != 'xjrl-mathtools-sourcedep installed 1.5'; then
+  if test "x`dpkg-query -W -f='${Package} ${Status} ${Version}\n' jrl-mathtools-sourcedep`" != 'xjrl-mathtools-sourcedep install ok installed 1.5'; then
     echo "jrl-mathtools-sourcedep not installed"
     exit 1
   else
