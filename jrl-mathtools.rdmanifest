@@ -1,5 +1,5 @@
-uri: 'ftp://ftp.openrobots.org/pub/openrobots/jrl-mal/jrl-mal-1.19.3.tar.gz'
-md5sum: a76e7cc01140a48a30c4e044639e9b10
+uri: 'ftp://ftp.openrobots.org/pub/openrobots/jrl-mathtools/jrl-mathtools-1.5.tar.gz'
+md5sum: 65c982c9bff33381ba41c5398e74caee
 install-script: |
   #!/bin/bash
   set -o errexit
@@ -8,14 +8,14 @@ install-script: |
   cmake ..
   make
   echo "About to run checkinstall make install"
-  sudo checkinstall -y --nodoc --pkgname=jrl-mal-sourcedep make install
+  sudo checkinstall -y --nodoc --pkgname=jrl-mathtools-sourcedep make install
 check-presence-script: |
   #!/bin/bash
-  dpkg-query -W -f='${Package} ${Status}\n' jrl-mal-sourcedep | awk '{\
-  if ($4 =="installed")
-    exit 0
+  if test x`dpkg-query -W -f='${Package} ${Status} ${Version}\n' jrl-mathtools-sourcedep` != 'xjrl-mathtools-sourcedep installed 1.5'; then
+    echo "jrl-mathtools-sourcedep not installed"
+    exit 1
   else
-    print "jrl-mal-sourcedep not installed"
-    exit 1}'
-exec-path: jrl-mal-1.19.3
-depends: [checkinstall boost]
+    exit 0
+  fi
+exec-path: jrl-mathtools-1.5
+depends: [checkinstall, boost, lapack, cmake, doxygen]

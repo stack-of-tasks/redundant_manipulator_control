@@ -18,4 +18,4 @@ check-presence-script: |
     exit 0
   fi
 exec-path: jrl-dynamics-1.19.4
-depends: [checkinstall boost lapack cmake doxygen]
+depends: [checkinstall, boost, cmake, doxygen, jrl-mal, abstract-robot-dynamics]

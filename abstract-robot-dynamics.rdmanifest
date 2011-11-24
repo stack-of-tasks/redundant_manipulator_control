@@ -11,11 +11,11 @@ install-script: |
   sudo checkinstall -y --nodoc --pkgname=abstract-robot-dynamics-sourcedep make install
 check-presence-script: |
   #!/bin/bash
-  dpkg-query -W -f='${Package} ${Status}\n' abstract-robot-dynamics-sourcedep | awk '{\
-  if ($4 =="installed")
-    exit 0
+  if test x`dpkg-query -W -f='${Package} ${Status} ${Version}\n' abstract-robot-dynamics-sourcedep` != 'xabstract-robot-dynamics-sourcedep installed 1.16.3'; then
+    echo "abstract-robot-dynamics-sourcedep not installed"
+    exit 1
   else
-    print "abstract-robot-dynamics-sourcedep not installed"
-    exit 1}'
+    exit 0
+  fi
 exec-path: abstract-robot-dynamics-1.16.3
-depends: [checkinstall boost lapack cmake doxygen jrl-mal jrl-mathtools]
+depends: [checkinstall, boost, cmake, doxygen, jrl-mal]
