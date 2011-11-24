@@ -13,7 +13,7 @@ install-script: |
   sudo rm -rf build
 check-presence-script: |
   #!/bin/bash
-  if test x`dpkg-query -W -f='${Package} ${Status} ${Version}\n' abstract-robot-dynamics-sourcedep` != 'xabstract-robot-dynamics-sourcedep installed 1.16.3'; then
+  if test "x`dpkg-query -W -f='${Package} ${Status} ${Version}\n' abstract-robot-dynamics-sourcedep`" != 'xabstract-robot-dynamics-sourcedep installed 1.16.3'; then
     echo "abstract-robot-dynamics-sourcedep not installed"
     exit 1
   else
