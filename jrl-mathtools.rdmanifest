@@ -5,10 +5,10 @@ install-script: |
   set -o errexit
   mkdir -p build
   cd build
-  cmake ..
+  cmake -DCMAKE_BUILD_TYPE=RelWithDebInfo ..
   make
   echo "About to run checkinstall make install"
-  sudo checkinstall -y --nodoc --pkgname=jrl-mathtools-sourcedep --pkg-version 1.5 make install
+  sudo checkinstall -y --nodoc --pkgname=jrl-mathtools-sourcedep --pkgversion=1.5 make install
   sudo chown -R a+rw .
 check-presence-script: |
   #!/bin/bash

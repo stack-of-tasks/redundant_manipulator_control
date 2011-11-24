@@ -5,7 +5,7 @@ install-script: |
   set -o errexit
   mkdir -p build
   cd build
-  cmake ..
+  cmake -DCMAKE_BUILD_TYPE=RelWithDebInfo ..
   make
   echo "About to run checkinstall make install"
   sudo checkinstall -y --nodoc --pkgname=jrl-dynamics-sourcedep --pkgversion=1.19.4 make install
