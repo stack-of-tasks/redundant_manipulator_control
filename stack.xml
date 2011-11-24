@@ -8,5 +8,7 @@
   <license>LGPL</license>  
   <review status="experimental" notes=""/>
   <url>http://ros.org/wiki/redundant_manipulator_control</url>
+
+  <depend stack="documentation" /> <!-- rosep: doxygen -->
   <depend stack="ros" />
 </stack>
