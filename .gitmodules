@@ -4,3 +4,6 @@
 [submodule "sot_pr2"]
 	path = sot_pr2
 	url = git://github.com/laas/sot_pr2.git
+[submodule "jrl_dynamics_urdf"]
+	path = jrl_dynamics_urdf
+	url = git@github.com:laas/jrl_dynamics_urdf.git
