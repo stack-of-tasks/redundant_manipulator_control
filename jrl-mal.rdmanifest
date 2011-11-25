@@ -1,5 +1,5 @@
-uri: 'ftp://ftp.openrobots.org/pub/openrobots/jrl-mal/jrl-mal-1.19.3.tar.gz'
-md5sum: a76e7cc01140a48a30c4e044639e9b10
+uri: 'ftp://ftp.openrobots.org/pub/openrobots/jrl-mal/jrl-mal-1.19.4.tar.gz'
+md5sum: 227fae0b9f691c45253dcbed83decd24
 install-script: |
   #!/bin/bash
   set -o errexit

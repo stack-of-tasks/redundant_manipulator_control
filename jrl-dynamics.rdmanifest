@@ -1,5 +1,5 @@
-uri: 'ftp://ftp.openrobots.org/pub/openrobots/jrl-dynamics/jrl-dynamics-1.19.4.tar.gz'
-md5sum: cd4fda142b35101f6c5ed4b05e6b1a87
+uri: 'ftp://ftp.openrobots.org/pub/openrobots/jrl-dynamics/jrl-dynamics-1.20.1.tar.gz'
+md5sum: e2c6a3d4c34a29065f3e725a8719e421
 install-script: |
   #!/bin/bash
   set -o errexit
@@ -20,5 +20,5 @@ check-presence-script: |
   else
     exit 0
   fi
-exec-path: jrl-dynamics-1.19.4
+exec-path: jrl-dynamics-1.20.1
 depends: [checkinstall, boost, cmake, doxygen, jrl-mal, abstract-robot-dynamics]

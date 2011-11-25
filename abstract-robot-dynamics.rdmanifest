@@ -1,5 +1,5 @@
-uri: 'ftp://ftp.openrobots.org/pub/openrobots/abstract-robot-dynamics/abstract-robot-dynamics-1.16.3.tar.gz'
-md5sum: 967398f2fac682e1460598efa6d28f28
+uri: 'ftp://ftp.openrobots.org/pub/openrobots/abstract-robot-dynamics/abstract-robot-dynamics-1.17.1.tar.gz'
+md5sum: 563482c1d170bfff54e0c3201f8dd262
 install-script: |
   #!/bin/bash
   set -o errexit
@@ -20,5 +20,5 @@ check-presence-script: |
   else
     exit 0
   fi
-exec-path: abstract-robot-dynamics-1.16.3
+exec-path: abstract-robot-dynamics-1.17.1
 depends: [checkinstall, boost, cmake, doxygen, jrl-mal]
