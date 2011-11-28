@@ -9,16 +9,16 @@ install-script: |
   cmake -DCMAKE_BUILD_TYPE=RelWithDebInfo -DSMALLMATRIX=jrl-mathtools ..
   make
   echo "About to run checkinstall make install"
-  sudo checkinstall -y --nodoc --pkgname=jrl-mal-sourcedep --pkgversion=1.19.3 make install
+  sudo checkinstall -y --nodoc --pkgname=jrl-mal-sourcedep --pkgversion=1.19.4 make install
   cd ..
   sudo rm -rf build
 check-presence-script: |
   #!/bin/bash
-  if test "x`dpkg-query -W -f='${Package} ${Status} ${Version}\n' jrl-mal-sourcedep`" != 'xjrl-mal-sourcedep install ok installed 1.19.3-1'; then
+  if test "x`dpkg-query -W -f='${Package} ${Status} ${Version}\n' jrl-mal-sourcedep`" != 'xjrl-mal-sourcedep install ok installed 1.19.4-1'; then
     echo "jrl-mal-sourcedep not installed"
     exit 1
   else
     exit 0
   fi
-exec-path: jrl-mal-1.19.3
+exec-path: jrl-mal-1.19.4
 depends: [checkinstall, boost, cmake, doxygen, lapack, jrl-mathtools]

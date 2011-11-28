@@ -9,12 +9,12 @@ install-script: |
   cmake -DCMAKE_BUILD_TYPE=RelWithDebInfo ..
   make
   echo "About to run checkinstall make install"
-  sudo checkinstall -y --nodoc --pkgname=jrl-dynamics-sourcedep --pkgversion=1.19.4 make install
+  sudo checkinstall -y --nodoc --pkgname=jrl-dynamics-sourcedep --pkgversion=1.20.1 make install
   cd ..
   sudo rm -rf build
 check-presence-script: |
   #!/bin/bash
-  if test "x`dpkg-query -W -f='${Package} ${Status} ${Version}\n' jrl-dynamics-sourcedep`" != 'xjrl-dynamics-sourcedep install ok installed 1.19.4-1'; then
+  if test "x`dpkg-query -W -f='${Package} ${Status} ${Version}\n' jrl-dynamics-sourcedep`" != 'xjrl-dynamics-sourcedep install ok installed 1.20.1-1'; then
     echo "jrl-dynamics-sourcedep not installed"
     exit 1
   else
