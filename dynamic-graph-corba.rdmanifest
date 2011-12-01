@@ -1,12 +1,12 @@
 uri: 'ftp://ftp.openrobots.org/pub/openrobots/dynamic-graph-corba/dynamic-graph-corba-2.5.tar.gz'
-md5sum: cd4fda142b35101f6c5ed4b05e6b1a87
+md5sum: 8b11bad7485ca360bae511b541f6af32
 install-script: |
   #!/bin/bash
   set -o errexit
   export LD_LIBRARY_PATH=/usr/local/lib/pkgconfig:/usr/lib/pkgconfig
   mkdir -p build
   cd build
-  cmake -DCMAKE_BUILD_TYPE=RelWithDebInfo ..
+  cmake -DCMAKE_BUILD_TYPE=RelWithDebInfo -DCXX_DISABLE_WERROR=1 ..
   make
   echo "About to run checkinstall make install"
   sudo checkinstall -y --nodoc --pkgname=dynamic-graph-corba-sourcedep --pkgversion=2.5 make install
