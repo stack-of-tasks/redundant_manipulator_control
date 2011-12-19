@@ -1,5 +1,5 @@
-uri: 'ftp://ftp.openrobots.org/pub/openrobots/sot-core/sot-core-2.5.tar.gz'
-md5sum: 851f8c0b5f161e395bfae15b295d6e69
+uri: 'ftp://ftp.openrobots.org/pub/openrobots/sot-core/sot-core-2.6.0.tar.gz'
+md5sum: 4926f90ae23d9cf1d2469475b76a770a
 install-script: |
   #!/bin/bash
   set -o errexit

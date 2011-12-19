@@ -1,5 +1,5 @@
-uri: 'ftp://ftp.openrobots.org/pub/openrobots/jrl-mathtools/jrl-mathtools-1.5.tar.gz'
-md5sum: 65c982c9bff33381ba41c5398e74caee
+uri: 'ftp://ftp.openrobots.org/pub/openrobots/jrl-mathtools/jrl-mathtools-1.5.1.tar.gz'
+md5sum: c6dd026ec5862a64c434b3bead8f46d0
 install-script: |
   #!/bin/bash
   set -o errexit

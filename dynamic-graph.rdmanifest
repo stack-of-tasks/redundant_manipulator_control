@@ -1,5 +1,5 @@
-uri: 'ftp://ftp.openrobots.org/pub/openrobots/dynamic-graph/dynamic-graph-2.5.tar.gz'
-md5sum: 5c8deac4a35fd1ba477c64f42ba42654
+uri: 'ftp://ftp.openrobots.org/pub/openrobots/dynamic-graph/dynamic-graph-2.5.1.tar.gz'
+md5sum: 0c426f248da44ecaf158b60d89f5bb31
 install-script: |
   #!/bin/bash
   set -o errexit

@@ -1,5 +1,5 @@
-uri: 'ftp://ftp.openrobots.org/pub/openrobots/dynamic-graph-corba/dynamic-graph-corba-2.5.tar.gz'
-md5sum: 8b11bad7485ca360bae511b541f6af32
+uri: 'ftp://ftp.openrobots.org/pub/openrobots/dynamic-graph-corba/dynamic-graph-corba-2.5.1.tar.gz'
+md5sum: 338df4b75613f554da6923172e64fbab
 install-script: |
   #!/bin/bash
   set -o errexit
