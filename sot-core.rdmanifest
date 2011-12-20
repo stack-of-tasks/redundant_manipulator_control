@@ -9,16 +9,16 @@ install-script: |
   cmake -DCMAKE_BUILD_TYPE=RelWithDebInfo -DCXX_DISABLE_WERROR=1 ..
   make
   echo "About to run checkinstall make install"
-  sudo checkinstall -y --nodoc --pkgname=sot-core-sourcedep --pkgversion=2.5 make install
+  sudo checkinstall -y --nodoc --pkgname=sot-core-sourcedep --pkgversion=2.6.0 make install
   cd ..
   sudo rm -rf build
 check-presence-script: |
   #!/bin/bash
-  if test "x`dpkg-query -W -f='${Package} ${Status} ${Version}\n' sot-core-sourcedep`" != 'xsot-core-sourcedep install ok installed 2.5-1'; then
+  if test "x`dpkg-query -W -f='${Package} ${Status} ${Version}\n' sot-core-sourcedep`" != 'xsot-core-sourcedep install ok installed 2.6.0-1'; then
     echo "sot-core-sourcedep not installed"
     exit 1
   else
     exit 0
   fi
-exec-path: sot-core-2.5
+exec-path: sot-core-2.6.0
 depends: [checkinstall, boost, cmake, doxygen, jrl-mal, dynamic-graph-python]
