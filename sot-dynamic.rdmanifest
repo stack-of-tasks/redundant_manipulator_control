@@ -21,4 +21,4 @@ check-presence-script: |
     exit 0
   fi
 exec-path: sot-dynamic-2.6.0
-depends: [checkinstall, boost, cmake, doxygen, sot-core]
+depends: [checkinstall, boost, cmake, doxygen, sot-core, jrl-dynamics]
