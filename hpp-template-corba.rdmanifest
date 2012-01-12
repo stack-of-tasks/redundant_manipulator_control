@@ -1,0 +1,24 @@
+uri: 'ftp://ftp.openrobots.org/pub/openrobots/hpp-template-corba/hpp-template-corba-1.1.tar.gz'
+md5sum: d27efc0d797f2de87f7f2aaa0aed8052
+install-script: |
+  #!/bin/bash
+  set -o errexit
+  export LD_LIBRARY_PATH=/usr/local/lib/pkgconfig:/usr/lib/pkgconfig
+  mkdir -p build
+  cd build
+  cmake -DCMAKE_BUILD_TYPE=RelWithDebInfo -DCXX_DISABLE_WERROR=1 ..
+  make
+  echo "About to run checkinstall make install"
+  sudo checkinstall -y --nodoc --pkgname=hpp-template-corba-sourcedep --pkgversion=1.1 make install
+  cd ..
+  sudo rm -rf build
+check-presence-script: |
+  #!/bin/bash
+  if test "x`dpkg-query -W -f='${Package} ${Status} ${Version}\n' hpp-template-corba-sourcedep`" != 'xhpp-template-corba-sourcedep install ok installed 1.1-1'; then
+    echo "hpp-template-corba-sourcedep not installed"
+    exit 1
+  else
+    exit 0
+  fi
+exec-path: hpp-template-corba-1.1
+depends: [checkinstall, boost, cmake, doxygen, omniORB4]

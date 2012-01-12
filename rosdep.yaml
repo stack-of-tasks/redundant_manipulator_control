@@ -71,6 +71,10 @@ dynamic-graph-python:
     source:
       uri: 'https://raw.github.com/laas/redundant_manipulator_control/master/dynamic-graph-python.rdmanifest'
 
+hpp-template-corba:
+  ubuntu:
+    source:
+      uri: 'https://raw.github.com/laas/redundant_manipulator_control/master/hpp-template-corba.rdmanifest'
 dynamic-graph-corba:
   ubuntu:
     source:

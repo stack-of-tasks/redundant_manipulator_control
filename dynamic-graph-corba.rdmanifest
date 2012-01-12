@@ -21,4 +21,4 @@ check-presence-script: |
     exit 0
   fi
 exec-path: dynamic-graph-corba-2.5.1
-depends: [checkinstall, boost, cmake, doxygen, omniORB4, sot-core]
+depends: [checkinstall, boost, cmake, doxygen, omniORB4, sot-core, hpp-template-corba]
