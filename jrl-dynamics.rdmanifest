@@ -1,5 +1,5 @@
-uri: 'ftp://ftp.openrobots.org/pub/openrobots/jrl-dynamics/jrl-dynamics-1.20.1.tar.gz'
-md5sum: e2c6a3d4c34a29065f3e725a8719e421
+uri: 'ftp://ftp.openrobots.org/pub/openrobots/jrl-dynamics/jrl-dynamics-1.21.0.tar.gz'
+md5sum: 2db4cef020ab8a0685667de98ae764bd
 install-script: |
   #!/bin/bash
   set -o errexit
@@ -9,16 +9,16 @@ install-script: |
   cmake -DCMAKE_BUILD_TYPE=RelWithDebInfo ..
   make
   echo "About to run checkinstall make install"
-  sudo checkinstall -y --nodoc --pkgname=jrl-dynamics-sourcedep --pkgversion=1.20.1 make install
+  sudo checkinstall -y --nodoc --pkgname=jrl-dynamics-sourcedep --pkgversion=1.12 make install
   cd ..
   sudo rm -rf build
 check-presence-script: |
   #!/bin/bash
-  if test "x`dpkg-query -W -f='${Package} ${Status} ${Version}\n' jrl-dynamics-sourcedep`" != 'xjrl-dynamics-sourcedep install ok installed 1.20.1-1'; then
+  if test "x`dpkg-query -W -f='${Package} ${Status} ${Version}\n' jrl-dynamics-sourcedep`" != 'xjrl-dynamics-sourcedep install ok installed 1.12-1'; then
     echo "jrl-dynamics-sourcedep not installed"
     exit 1
   else
     exit 0
   fi
-exec-path: jrl-dynamics-1.20.1
+exec-path: jrl-dynamics-1.21
 depends: [checkinstall, boost, cmake, doxygen, jrl-mal, abstract-robot-dynamics]
