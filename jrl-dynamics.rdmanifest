@@ -20,5 +20,5 @@ check-presence-script: |
   else
     exit 0
   fi
-exec-path: jrl-dynamics-1.21
+exec-path: jrl-dynamics-1.21.0
 depends: [checkinstall, boost, cmake, doxygen, jrl-mal, abstract-robot-dynamics]
