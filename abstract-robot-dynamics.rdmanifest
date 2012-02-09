@@ -1,5 +1,5 @@
-uri: 'ftp://ftp.openrobots.org/pub/openrobots/abstract-robot-dynamics/abstract-robot-dynamics-1.17.1.tar.gz'
-md5sum: 563482c1d170bfff54e0c3201f8dd262
+uri: 'ftp://ftp.openrobots.org/pub/openrobots/abstract-robot-dynamics/abstract-robot-dynamics-1.18.0.tar.gz'
+md5sum: be7bdd086f86e63cb272c7cf41fa9fe5
 install-script: |
   #!/bin/bash
   set -o errexit
@@ -9,16 +9,16 @@ install-script: |
   cmake -DCMAKE_BUILD_TYPE=RelWithDebInfo ..
   make
   echo "About to run checkinstall make install"
-  sudo checkinstall -y --nodoc --pkgname=abstract-robot-dynamics-sourcedep --pkgversion=1.17.1 make install
+  sudo checkinstall -y --nodoc --pkgname=abstract-robot-dynamics-sourcedep --pkgversion=1.18.0 make install
   cd ..
   sudo rm -rf build
 check-presence-script: |
   #!/bin/bash
-  if test "x`dpkg-query -W -f='${Package} ${Status} ${Version}\n' abstract-robot-dynamics-sourcedep`" != 'xabstract-robot-dynamics-sourcedep install ok installed 1.17.1-1'; then
+  if test "x`dpkg-query -W -f='${Package} ${Status} ${Version}\n' abstract-robot-dynamics-sourcedep`" != 'xabstract-robot-dynamics-sourcedep install ok installed 1.18.0-1'; then
     echo "abstract-robot-dynamics-sourcedep not installed"
     exit 1
   else
     exit 0
   fi
-exec-path: abstract-robot-dynamics-1.17.1
+exec-path: abstract-robot-dynamics-1.18.0
 depends: [checkinstall, boost, cmake, doxygen, jrl-mal]
