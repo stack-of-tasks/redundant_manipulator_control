@@ -1,0 +1,14 @@
+<package>
+  <description brief="dynamic_graph_actionlib">
+
+     dynamic_graph_actionlib
+
+  </description>
+  <author>Thomas Moulard</author>
+  <license>BSD</license>
+  <review status="unreviewed" notes=""/>
+  <url>http://ros.org/wiki/dynamic_graph_actionlib</url>
+
+</package>
+
+
