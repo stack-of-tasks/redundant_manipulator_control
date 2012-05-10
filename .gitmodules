@@ -10,3 +10,6 @@
 [submodule "roboptim_smoother"]
 	path = roboptim_smoother
 	url = git://github.com/laas/roboptim_smoother.git
+[submodule "dynamic_graph_actionlib"]
+	path = dynamic_graph_actionlib
+	url = git://github.com/laas/dynamic_graph_actionlib.git
