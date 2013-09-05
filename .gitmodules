@@ -1,15 +1,12 @@
 [submodule "dynamic_graph_bridge"]
 	path = dynamic_graph_bridge
-	url = git://github.com/jrl-umi3218/dynamic_graph_bridge.git
+	url = git://github.com/stack-of-tasks/dynamic_graph_bridge.git
 [submodule "sot_pr2"]
 	path = sot_pr2
-	url = git://github.com/laas/sot_pr2.git
+	url = git://github.com/stack-of-tasks/sot_pr2.git
 [submodule "jrl_dynamics_urdf"]
 	path = jrl_dynamics_urdf
-	url = git://github.com/laas/jrl_dynamics_urdf.git
-[submodule "roboptim_smoother"]
-	path = roboptim_smoother
-	url = git://github.com/laas/roboptim_smoother.git
+	url = git://github.com/stack-of-tasks/jrl_dynamics_urdf.git
 [submodule "dynamic_graph_actionlib"]
 	path = dynamic_graph_actionlib
-	url = git://github.com/laas/dynamic_graph_actionlib.git
+	url = git://github.com/stack-of-tasks/dynamic_graph_actionlib.git
