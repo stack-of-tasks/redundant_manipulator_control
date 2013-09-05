@@ -6,7 +6,7 @@
 	url = git://github.com/stack-of-tasks/sot_pr2.git
 [submodule "jrl_dynamics_urdf"]
 	path = jrl_dynamics_urdf
-	url = git://github.com/stack-of-tasks/jrl_dynamics_urdf.git
+	url = git://github.com/laas/jrl_dynamics_urdf.git
 [submodule "dynamic_graph_actionlib"]
 	path = dynamic_graph_actionlib
 	url = git://github.com/stack-of-tasks/dynamic_graph_actionlib.git
