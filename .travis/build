@@ -9,6 +9,9 @@ install_dir="$root_dir/_travis/install"
 # Shortcuts.
 git_clone="git clone --quiet --recursive"
 
+# Source ROS setup file
+source /opt/ros/groovy/setup.sh
+
 # Create layout.
 rm -rf "$build_dir" "$install_dir"
 mkdir -p "$build_dir"
