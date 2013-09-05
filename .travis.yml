@@ -26,6 +26,6 @@ before_install:
 - wget http://packages.ros.org/ros.key -O - | sudo apt-key add -
 - sudo apt-get update -qq
 - sudo apt-get install -qq doxygen doxygen-latex libboost-all-dev libeigen3-dev liblapack-dev libblas-dev gfortran
-- sudo apt-get install ros-groovy-ros-base ros-groovy-pr2-mechanism
+- sudo apt-get install ros-groovy-ros-base ros-groovy-pr2-mechanism ros-groovy-common-rosdeps ros-groovy-rosdoc-lite
 - sudo rosdep init
 - rosdep update

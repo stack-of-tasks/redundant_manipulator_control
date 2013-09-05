@@ -41,4 +41,5 @@ install_dependency jrl-umi3218/jrl-mathtools
 install_dependency jrl-umi3218/jrl-mal
 
 cd "$root_dir"
-rosmake redundant_manipulator_control
+# only build dynamic_graph_bridge for now
+rosmake dynamic_graph_bridge
