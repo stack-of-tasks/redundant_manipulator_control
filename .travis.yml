@@ -13,6 +13,9 @@ notifications:
 branches:
   only:
   - master
+  - hydro
+  - groovy
+  - fuerte
 before_install: ./.travis/before_install
 script: ./.travis/build
 after_success: ./.travis/after_success
