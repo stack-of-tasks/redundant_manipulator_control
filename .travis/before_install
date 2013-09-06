@@ -1,0 +1,48 @@
+#!/bin/bash
+set -ev
+
+export UBUNTU_CODENAME=`lsb_release -s -c`
+export ROS_VERSION=hydro
+
+echo "Ubuntu codename: $UBUNTU_CODENAME"
+echo "ROS version: $ROS_VERSION"
+
+if `test x$UBUNTU_CODENAME = x`; then
+    echo "failed to determine Ubuntu codename"
+    return 1
+fi
+if `test x$UBUNTU_CODENAME = x`; then
+    echo "failed to determine ROS version"
+    return 1
+fi
+
+git submodule update --init --recursive
+
+sudo sh -c "echo \"deb http://packages.ros.org/ros/ubuntu $UBUNTU_CODENAME main\" > /etc/apt/sources.list.d/ros-latest.list"
+wget http://packages.ros.org/ros.key -O - | sudo apt-key add -
+
+sudo apt-get update -qq
+
+sudo apt-get install -qq	\
+    doxygen doxygen-latex	\
+    libboost-all-dev		\
+    libeigen3-dev		\
+    liblapack-dev		\
+    libblas-dev			\
+    gfortran			\
+    python-dev			\
+    python-sphinx		\
+    python-numpy
+
+
+sudo apt-get install -qq		\
+    ros-$ROS_VERSION-ros-base		\
+    ros-$ROS_VERSION-pr2-mechanism	\
+    ros-$ROS_VERSION-tf			\
+    ros-$ROS_VERSION-resource-retriever \
+    ros-$ROS_VERSION-urdf		\
+    ros-$ROS_VERSION-common-msgs	\
+    ros-$ROS_VERSION-rosdoc-lite
+
+sudo rosdep init
+rosdep update
