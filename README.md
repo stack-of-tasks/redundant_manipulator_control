@@ -1,7 +1,7 @@
 Redundant manipulator control stack for ROS
 ===========================================
 
-[![Build Status](https://travis-ci.org/stack-of-tasks/redundant_manipulator_control.png?branch=groovy)](https://travis-ci.org/stack-of-tasks/redundant_manipulator_control)
+[![Build Status](https://travis-ci.org/stack-of-tasks/redundant_manipulator_control.png?branch=fuerte)](https://travis-ci.org/stack-of-tasks/redundant_manipulator_control)
 
 
 This repository provides a real-time control framework for [ROS]
