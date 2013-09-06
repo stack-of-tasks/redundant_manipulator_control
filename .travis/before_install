@@ -43,7 +43,8 @@ sudo apt-get install -qq		\
     ros-$ROS_VERSION-ros-realtime	\
     ros-$ROS_VERSION-robot-model	\
     ros-$ROS_VERSION-common-msgs	\
-    ros-$ROS_VERSION-rosdoc-lite
+    ros-$ROS_VERSION-rosdoc-lite	\
+    python-rosdep
 
 sudo rosdep init
 rosdep update
