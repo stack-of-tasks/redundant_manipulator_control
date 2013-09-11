@@ -44,5 +44,8 @@ sudo apt-get install -qq		\
     ros-$ROS_VERSION-common-msgs	\
     ros-$ROS_VERSION-rosdoc-lite
 
+rosinstall `pwd` `pwd` /opt/ros/$ROS_VERSION/
+. setup.sh
 sudo rosdep init
 rosdep update
+rosdep install dynamic_graph_bridge

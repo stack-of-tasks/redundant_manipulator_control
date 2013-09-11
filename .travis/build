@@ -49,4 +49,4 @@ install_dependency stack-of-tasks/sot-dynamic
 
 cd "$root_dir"
 # only build dynamic_graph_bridge for now
-rosmake dynamic_graph_bridge
+VERBOSE=1 rosmake dynamic_graph_bridge -V
