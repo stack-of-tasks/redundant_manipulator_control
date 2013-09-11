@@ -44,7 +44,8 @@ sudo apt-get install -qq		\
     ros-$ROS_VERSION-resource-retriever \
     ros-$ROS_VERSION-urdf		\
     ros-$ROS_VERSION-common-msgs	\
-    ros-$ROS_VERSION-rosdoc-lite
+    ros-$ROS_VERSION-rosdoc-lite	\
+    ros-$ROS_VERSION-cmake-modules
 
 rosinstall `pwd` `pwd` /opt/ros/$ROS_VERSION/
 . setup.sh
