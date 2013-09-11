@@ -32,7 +32,9 @@ sudo apt-get install -qq	\
     gfortran			\
     python-dev			\
     python-sphinx		\
-    python-numpy
+    python-numpy		\
+    python-rosinstall		\
+    python-rosdep
 
 
 sudo apt-get install -qq		\
