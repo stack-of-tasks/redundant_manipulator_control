@@ -1,0 +1,14 @@
+<package>
+  <description brief="roboptim_smoother">
+
+     roboptim_smoother
+
+  </description>
+  <author>Thomas Moulard</author>
+  <license>BSD</license>
+  <review status="unreviewed" notes=""/>
+  <url>http://ros.org/wiki/roboptim_smoother</url>
+
+</package>
+
+
