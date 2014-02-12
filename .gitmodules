@@ -10,3 +10,6 @@
 [submodule "dynamic_graph_actionlib"]
 	path = dynamic_graph_actionlib
 	url = git://github.com/stack-of-tasks/dynamic_graph_actionlib.git
+[submodule "dynamic_graph_bridge_msgs"]
+	path = dynamic_graph_bridge_msgs
+	url = https://github.com/stack-of-tasks/dynamic_graph_bridge_msgs.git
