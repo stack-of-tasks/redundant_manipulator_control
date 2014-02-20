@@ -34,7 +34,8 @@ sudo apt-get install -qq	\
     python-sphinx		\
     python-numpy		\
     python-rosinstall		\
-    python-rosdep
+    python-rosdep    \
+    libbullet-dev
 
 
 sudo apt-get install -qq		\

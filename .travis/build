@@ -41,6 +41,7 @@ install_dependency jrl-umi3218/jrl-mathtools
 install_dependency jrl-umi3218/jrl-mal
 install_dependency laas/abstract-robot-dynamics
 install_dependency jrl-umi3218/jrl-dynamics
+install_dependency laas/jrl_dynamics_urdf
 install_dependency stack-of-tasks/dynamic-graph
 install_dependency stack-of-tasks/dynamic-graph-python
 install_dependency stack-of-tasks/sot-core
@@ -48,5 +49,5 @@ install_dependency stack-of-tasks/sot-tools
 install_dependency stack-of-tasks/sot-dynamic
 
 cd "$root_dir"
-# only build dynamic_graph_bridge for now
+VERBOSE=1 rosmake dynamic_graph_bridge_msgs -V
 VERBOSE=1 rosmake dynamic_graph_bridge -V
