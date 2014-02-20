@@ -32,7 +32,8 @@ sudo apt-get install -qq	\
     gfortran			\
     python-dev			\
     python-sphinx		\
-    python-numpy
+    python-numpy    \
+    libbullet-dev
 
 
 sudo apt-get install -qq		\
